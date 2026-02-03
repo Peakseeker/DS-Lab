@@ -1,0 +1,191 @@
+import java.lang.*;
+import java.util.*;
+
+public class Exp_2 {
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int r1, r2, c1, c2, i, j;
+
+        System.out.println("Enter size of matrix 1 : ");
+        r1 = sc.nextInt();
+        c1 = sc.nextInt();
+
+        int A[][] = new int[r1][c1];
+
+        System.out.println("Enter size of matrix 2 : ");
+        r2 = sc.nextInt();
+        c2 = sc.nextInt();
+
+        int B[][] = new int[r2][c2];
+
+        System.out.println("Enter elements in matrix 1 : ");
+
+        for(i = 0; i < r1; i++)
+        {
+            for(j = 0; j < c1; j++)
+            {
+                A[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements in matrix 1 : ");
+
+        for(i = 0; i < r2; i++)
+        {
+            for(j = 0; j < c2; j++)
+            {
+                B[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("---CHOICES---");
+        System.out.println(" 1. Printing elements of matrices ");
+        System.out.println(" 2. Transpose of matrices ");
+        System.out.println(" 3. Addition of matrices ");
+        System.out.println(" 4. Substraction of matrices ");
+        System.out.println(" 5. Multiplication of matrices ");
+
+        System.out.println(" ");
+        System.out.println(" Enter no. of choice : ");
+        int x = sc.nextInt();
+
+        switch(x)
+        {
+            case 1 :
+                    System.out.println(" Printing elements of matrix 1 : ");
+
+                    for(i = 0 ; i < r1; i++)
+                    {
+                        for( j = 0; j < c1; j++)
+                        {
+                            System.out.print(A[i][j]+" ");
+                        }
+                        System.out.println();
+                    }
+
+                    System.out.println(" Printing elements of matrix 2 : ");
+
+                    for(i = 0 ; i < r2; i++)
+                    {
+                        for( j = 0; j < c2; j++)
+                        {
+                            System.out.print(B[i][j]+" ");
+                        }
+                        System.out.println();
+                    }
+
+                        break ;
+
+                case 2 :
+                        System.out.println(" Transpose of matrix 1 : ");
+
+                        for(i = 0; i < r1; i++)
+                        {
+                            for(j = 0; j < c1; j++)
+                            {
+                                System.out.print(A[j][i]);
+
+                            }
+                            System.out.println(" ");
+                        }
+
+                        System.out.println(" Transpose of matrix 2 : ");
+
+                        for(i = 0; i < r2; i++)
+                        {
+                            for(j = 0; j < c2; j++)
+                            {
+                                System.out.print(B[j][i]);
+
+                            }
+                            System.out.println(" ");
+
+                        }       
+                            break;
+                case 3 : 
+                            System.out.println("Addition of matrices : ");
+
+                            int C[][] = new int[3][3];
+                            
+                            for(i = 0; i < 3; i++)
+                                {
+                                    for(j = 0; j < 3; j++)
+                                    {
+                                        C[i][j] = A[i][j] + B[i][j];
+                                    }
+                                    
+                                }
+
+                                for(i = 0; i < 3; i++)
+                                {
+                                    for(j = 0; j < 3; j++)
+                                    {
+                                    System.out.print(C[i][j]+" ");
+                                    }
+                                    System.out.println();
+                                }
+
+                                break;
+                case 4 : 
+                            System.out.println("Substraction of matrices : ");
+
+                            int D[][] = new int[3][3];
+                            
+                            for(i = 0; i < 3; i++)
+                                {
+                                    for(j = 0; j < 3; j++)
+                                    {
+                                        D[i][j] = A[i][j] - B[i][j];
+                                    }
+                                    // System.out.println();
+
+                                }
+
+                            for(i = 0; i < 3; i++)
+                                {
+                                    for(j = 0; j < 3; j++)
+                                    {
+                                    System.out.print(D[i][j]+" ");
+                                    }
+                                    System.out.println();
+
+                                }
+
+                                break;
+                case 5 :
+                            System.out.println("Multiplication of matrices : ");
+
+                            int M[][] = new int[3][3];
+
+                            for(i=0; i<3; i++)
+                            {
+                                for(j = 0; j < 3; j++)
+                                {
+                                    M[i][j] = 0;
+                                    for(int k = 0; k < 3; k++)
+                                    {
+                                        M[i][j] += A[i][k]*B[k][j]; 
+                                    }
+                                    // System.out.println();
+                                }
+                            }
+
+                            for(i=0; i<3; i++)
+                            {
+                                for(j = 0; j < 3; j++)
+                                {
+                                    
+                                    System.out.print(M[i][j]+" "); 
+                                    }
+                                    System.out.println();
+                                }
+                            
+
+                                break;
+        }
+
+
+    }
+    
+}

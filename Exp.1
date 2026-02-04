@@ -1,1 +1,143 @@
 
+import java.lang.*;
+import java.util.*;
+
+class Exp_1
+{
+    public static void main(String arg[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter size of array 1 : ");
+        int n = sc.nextInt();
+        int A[] = new int[n];
+
+        System.out.println("Enter size of array 2 : ");
+        int m = sc.nextInt();
+        int B[] = new int[m];
+
+        System.out.println("Enter an elements in array 1 : ");
+
+        for(int i = 0; i < n; i++)
+        {
+            A[i] = sc.nextInt();
+        }
+
+        System.out.println("Enter an elements in array 2 : ");
+
+        for(int i = 0; i < n; i++)
+        {
+            B[i] = sc.nextInt();
+        }
+
+        System.out.println("---CHOICES---\n 1. Printing an elements \n 2. Addition of two arrays \n 3. Substraction of two arrays \n 4. Upadating an element in array");
+
+        System.out.println("Enter an no. of choice : ");
+        int a = sc.nextInt();
+
+        switch(a)
+        {
+            case 1 : 
+                    System.out.println("Elements of array 1 : ");
+
+                    for(int i = 0; i < n; i++)
+                    {
+                        System.out.println(A[i]);
+                    }
+
+                    System.out.println("Elements of array 2 : ");
+
+                    for(int i = 0; i < m; i++)
+                    {
+                        System.out.println(B[i]);
+                    }
+                        break;
+
+            case 2 :
+                    System.out.println("Addition of two arrays : ");
+
+                    int sum = 0;
+
+                    if(A.length >= B.length)
+                    {
+                        for(int i = 0; i < n; i++)
+                        {
+                            sum = A[i]+ B[i];
+                        }
+                    }
+                    else {
+                        for(int i = 0; i < m; i++)
+                        {
+                            sum = A[i]+B[i];
+                        }
+                    }
+                        break;
+
+            case 3 :
+                    System.out.println("Substraction of two arrays : ");
+
+                    int sub = 0;
+
+                    if(A.length >= B.length)
+                    {
+                        for(int i = 0; i < n; i++)
+                        {
+                            if(A[i]>B[i]){
+                                sum = A[i]- B[i];}
+                            else{
+                                sum = B[i] - A[i];
+                            }
+                        }
+                    }
+                    else {
+                        for(int i = 0; i < m; i++)
+                        {
+                            if(A[i]>B[i]){
+                                sum = A[i]- B[i];
+                            }
+                            else{
+                                sum = B[i] - A[i];
+                            }
+                        }
+                    }
+                        break;
+
+
+                case 4 : 
+                        System.out.println("element in which array you want to update(1/2) : ");
+
+                        int x = sc.nextInt();
+
+                        switch(x)
+                        {
+                            case 1 :System.out.println("Enter index of element which you want to update : ");
+                                    int k = sc.nextInt();
+
+                                    System.out.println("Enter the vale for "+ k+" index element : ");
+                                    int l = sc.nextInt();
+
+                                    A[k] = l;
+
+                                    System.out.println("The value of A["+k+"] = " + l);
+
+                                    break;
+                            
+                            case 2 :System.out.println("Enter index of element which you want to update : ");
+                                    int o = sc.nextInt();
+
+                                    System.out.println("Enter the vale for "+ o+" index element : ");
+                                    int p = sc.nextInt();
+
+                                    A[o] = p;
+
+                                    System.out.println("The value of A["+o+"] = " + p);
+
+                        }
+                    
+
+
+        }
+
+    }
+
+}
